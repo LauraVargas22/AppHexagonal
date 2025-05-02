@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MiAppHexagonal
-build_property.ProjectDir = /home/camper/Documentos/MiAppHexagonal/
+build_property.ProjectDir = C:\Users\USUARIO\Documents\CAMPUSLANDS\AppHexagonal\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
