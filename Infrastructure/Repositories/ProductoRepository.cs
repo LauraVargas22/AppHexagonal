@@ -17,20 +17,16 @@ public class ProductoRepository : IGenericRepository<Producto>, IProductoReposit
 
     public void Actualizar(Producto producto)
     {
-        var connection = _conexion.ObtenerConexion();
-        string query = "UPDATE productos SET nombre = @nombre WHERE id = @id";
-        using var cmd = new MySqlCommand(query, connection);
-        cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
-        cmd.Parameters.AddWithValue("@id", producto.Id);
-        cmd.ExecuteNonQuery();
+        //
     }
 
-    public void Crear(Producto producto)
+    public void Crear(Producto productos)
     {
         var connection = _conexion.ObtenerConexion();
-        string query = "INSERT INTO producto (nombre) VALUES (@nombre)";
+        string query = "INSERT INTO productos (nombre, stock) VALUES (@nombre, @stock)";
         using var cmd = new MySqlCommand(query, connection);
-        cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
+        cmd.Parameters.AddWithValue("@nombre", productos.Nombre);
+        cmd.Parameters.AddWithValue("@stock", productos.Stock);
         cmd.ExecuteNonQuery();
     }
 

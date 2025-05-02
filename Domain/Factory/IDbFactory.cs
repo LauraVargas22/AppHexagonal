@@ -6,6 +6,5 @@ namespace MiAppHexagonal.Domain.Factory;
 public interface IDbFactory
 {
     IClienteRepository CrearClienteRepository();
-
     IProductoRepository CrearProductoRepository();
 }

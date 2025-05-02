@@ -22,9 +22,9 @@ public class ProductoService
         }
     }
 
-    public void CrearProducto(string nombre)
+    public void CrearProducto(Producto producto)
     {
-        _repo.Crear(new Producto { Nombre = nombre });
+        _repo.Crear(producto);
     }
 
     public void ActualizarProducto(int id, string nuevoNombre)

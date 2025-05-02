@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiAppHexagonal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bd30f017f77f69c521669d4b0ef39c46789b8c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba7cb4c52997a3610331de302b50147c7841e9e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiAppHexagonal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiAppHexagonal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

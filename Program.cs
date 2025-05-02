@@ -1,21 +1,24 @@
 ﻿using MiAppHexagonal.Application.Services;
 using MiAppHexagonal.Domain.Factory;
 using MiAppHexagonal.Infrastructure.Mysql;
+using MiAppHexagonal.Domain.Entities;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        string connStr = "server=localhost;database=prueba;user=campus2023;password=campus2023;";
+        string connStr = "server=localhost;database=prueba;user=root;password=Lau05032015;";
         IDbFactory factory = new MySqlDbFactory(connStr);
         var servicio = new ClienteService(factory.CrearClienteRepository());
-                while (true)
+        var servicioProducto = new ProductoService(factory.CrearProductoRepository());
+        while (true)
         {
             Console.WriteLine("\n--- MENÚ CLIENTES ---");
             Console.WriteLine("1. Mostrar todos");
             Console.WriteLine("2. Crear nuevo");
             Console.WriteLine("3. Actualizar");
             Console.WriteLine("4. Eliminar");
+            Console.WriteLine("5. Crear Producto");
             Console.WriteLine("0. Salir");
             Console.Write("Opción: ");
             var opcion = Console.ReadLine();
@@ -38,6 +41,14 @@ internal class Program
                     Console.Write("ID a eliminar: ");
                     int idE = int.Parse(Console.ReadLine()!);
                     servicio.EliminarCliente(idE);
+                    break;
+                case "5":
+                    Producto producto = new Producto();
+                    Console.Write("Nombre: ");
+                    producto.Nombre = Console.ReadLine();
+                    Console.WriteLine("Stock: ");
+                    producto.Stock = int.Parse(Console.ReadLine());
+                    servicioProducto.CrearProducto(producto);
                     break;
                 case "0":
                     return;
