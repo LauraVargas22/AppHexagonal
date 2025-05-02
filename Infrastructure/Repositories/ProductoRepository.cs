@@ -15,14 +15,23 @@ public class ProductoRepository : IGenericRepository<Producto>, IProductoReposit
         _conexion = ConexionSingleton.Instancia(connectionString);
     }
 
-    public void Actualizar(Producto entity)
+    public void Actualizar(Producto producto)
     {
-        throw new NotImplementedException();
+        var connection = _conexion.ObtenerConexion();
+        string query = "UPDATE productos SET nombre = @nombre WHERE id = @id";
+        using var cmd = new MySqlCommand(query, connection);
+        cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
+        cmd.Parameters.AddWithValue("@id", producto.Id);
+        cmd.ExecuteNonQuery();
     }
 
-    public void Crear(Producto entity)
+    public void Crear(Producto producto)
     {
-        throw new NotImplementedException();
+        var connection = _conexion.ObtenerConexion();
+        string query = "INSERT INTO producto (nombre) VALUES (@nombre)";
+        using var cmd = new MySqlCommand(query, connection);
+        cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
+        cmd.ExecuteNonQuery();
     }
 
     public void Eliminar(int id)
