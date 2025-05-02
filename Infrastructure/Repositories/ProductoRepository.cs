@@ -36,7 +36,11 @@ public class ProductoRepository : IGenericRepository<Producto>, IProductoReposit
 
     public void Eliminar(int id)
     {
-        throw new NotImplementedException();
+        var connection = _conexion.ObtenerConexion();
+        string query = "DELETE FROM clientes WHERE id = @id";
+        using var cmd = new MySqlCommand(query, connection);
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.ExecuteNonQuery();
     }
 
     public List<Producto> ObtenerTodos()
