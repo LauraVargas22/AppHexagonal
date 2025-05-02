@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 
 namespace MiAppHexagonal.Infrastructure.Repositories;
 
-public class lmpClienteRepository : IClienteRepository
+public class lmpClienteRepository : IGenericRepository<Cliente>, IClienteRepository
 {
     private readonly ConexionSingleton _conexion;
 

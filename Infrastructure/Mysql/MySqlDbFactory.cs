@@ -18,4 +18,9 @@ public class MySqlDbFactory : IDbFactory
     {
         return new lmpClienteRepository(_connectionString);
     }
+
+    public IProductoRepository CrearProductoRepository()
+    {
+        return new ProductoRepository(_connectionString);
+    }
 }

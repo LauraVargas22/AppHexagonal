@@ -3,10 +3,7 @@ using MiAppHexagonal.Domain.Entities;
 
 namespace MiAppHexagonal.Domain.Ports;
 
-public interface IClienteRepository
+public interface IClienteRepository : IGenericRepository<Cliente>
 {
-    List<Cliente> ObtenerTodos();
-    void Crear(Cliente cliente);
-    void Actualizar(Cliente cliente);
-    void Eliminar(int id);
+
 }

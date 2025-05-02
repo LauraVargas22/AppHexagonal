@@ -6,7 +6,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string connStr = "server=localhost;database=mi_base;user=mi_usuario;password=mi_contraseña;";
+        string connStr = "server=localhost;database=prueba;user=campus2023;password=campus2023;";
         IDbFactory factory = new MySqlDbFactory(connStr);
         var servicio = new ClienteService(factory.CrearClienteRepository());
                 while (true)
